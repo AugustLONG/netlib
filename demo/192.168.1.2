@@ -1,0 +1,75 @@
+('Begin to ssh for switch: ', '192.168.1.2', ' in ', <Thread(Thread-1, started daemon 140064215799552)>, '\n\n')
+Info: The max number of VTY users is 5, and the number
+      of current VTY users on line is 1.
+<Huawei>sys
+Enter system view, return user view with Ctrl+Z.
+[Huawei]dis cur
+#
+!Software Version V100R006C03
+ sysname Huawei
+
+ undo http server enable
+#
+
+aaa
+ authentication-scheme default
+ authentication-scheme auth-scheme
+  authentication-mode radius
+ authorization-scheme default
+ accounting-scheme default
+ domain default
+ domain default_admin
+#
+interface Vlanif1
+ ip address 192.168.1.1 255.255.255.0
+#
+interface Ethernet0/0/1
+ port link-type access
+#
+interface Ethernet0/0/2
+ port link-type access
+#
+interface Ethernet0/0/3
+ port link-type access
+#
+interface Ethernet0/0/4
+ port link-type access
+#
+interface Ethernet0/0/5
+ port link-type access
+#
+interface Ethernet0/0/6
+ shutdown
+ port link-type access
+#
+interface Ethernet0/0/7
+ port link-type access
+#
+interface Ethernet0/0/8
+ port link-type access
+#
+interface GigabitEthernet0/0/1
+ port link-type trunk
+ port trunk allow-pass vlan 2 to 4094
+#
+interface NULL0
+#
+ ip route-static 0.0.0.0 0.0.0.0 192.168.1.110
+#
+#
+ stelnet server enable
+ ssh authentication-type default password
+#
+user-interface con 0
+ authentication-mode password
+user-interface vty 0 4
+ authentication-mode aaa
+ user privilege level 15
+ idle-timeout 1 0
+ screen-length 0
+ protocol inbound ssh
+#
+return
+[Huawei]save
+The current configuration will be written to the device.
+Are you sure to continue?[Y/N]Y('All comands have been executed for switch: ', '192.168.1.2', ' in ', <Thread(Thread-1, started daemon 140064215799552)>)

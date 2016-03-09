@@ -1,4 +1,4 @@
-# 本项目旨在通过Python脚本进行交换机SSH或Telnet配置管理
+# 通过Python脚本进行交换机SSH或Telnet配置管理
 功能包括：
 * SSH登录交换机
 * 开启、关闭交换机分页显示
@@ -7,6 +7,7 @@
 * 多线程并行的多台交换机同时配置
 * 多线程进程数量自定义设置
 
+
 # TODO
 1. 目前代码多为函数调用，应封装成类对象的方式更优
 2. 考虑将这些功能规划、封装，打包成一个开源库
@@ -14,7 +15,7 @@
 
 
 
-该项目依赖于下列项目：
+该项目依赖于下列项目：[jtdub/netlib](https://github.com/jtdub/netlib)
 # NetLib
 
 Netlib is my attempt at re-writing my
