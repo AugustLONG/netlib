@@ -1,0 +1,12 @@
+[Config]
+# switch type: "cisco", "ruijie", "huawei"
+sw_type: huawei
+
+# switch list file name
+sw_list_file: sw_list
+
+# command list file name
+cmd_list_file: cmd_list
+
+# multi-threading count
+thread_count: 8
